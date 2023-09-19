@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>#brechodakenia</title>
+        <meta charset="utf:8"/>
+    </head>
+
+    <body>
+        <div id="Produtos">
+
+        </div>
+
+        <div id="Carrinho">
+
+        </div>
+
+        <script>
+            const item = [
+                {
+                    id:0,
+                    nome: "blusa",
+                    img: "laranja.avif",
+                    quanidade: 0,
+                },
+                {
+                    id:0,
+                    nome: "calça",
+                    img: "laranja.avif",
+                    quanidade: 0,
+                },
+                {
+                    id:0,
+                    nome: "cardigan",
+                    img: "laranja.avif",
+                    quanidade: 0,
+                },
+            ]
+
+            inicializarloja = () => {
+                var containerProdutos = document.getElementById('produtos');
+                items.map((val)=>{
+                    containerProdutos.innerHTML+= `
+
+                    <div class="protduto-single">
+                        <img src="`+val.img+`"/>
+                        <p>`+val.nome+`</p>
+                        <a keys="`val.id`" href="">Adicionar ao carrinho!<a/>
+                    `;
+                })
+            }
+            inicializarloja();
+
+
+        </script>
+    </body>
+</html>
