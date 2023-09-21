@@ -5,32 +5,32 @@
     </head>
 
     <body>
-        <div id="Produtos">
+        <div id="produtos">
 
         </div>
 
-        <div id="Carrinho">
+        <div id="carrinho">
 
         </div>
 
         <script>
-            const item = [
+            const items = [
                 {
                     id:0,
                     nome: "blusa",
-                    img: "laranja.avif",
+                    img: "imagem.avif",
                     quanidade: 0,
                 },
                 {
-                    id:0,
+                    id:1,
                     nome: "calça",
-                    img: "laranja.avif",
+                    img: "imagem.avif",
                     quanidade: 0,
                 },
                 {
-                    id:0,
+                    id:2,
                     nome: "cardigan",
-                    img: "laranja.avif",
+                    img: "imagem.avif",
                     quanidade: 0,
                 },
             ]
@@ -40,15 +40,30 @@
                 items.map((val)=>{
                     containerProdutos.innerHTML+= `
 
-                    <div class="protduto-single">
+                    <div class="produto-single">
                         <img src="`+val.img+`"/>
                         <p>`+val.nome+`</p>
-                        <a keys="`val.id`" href="">Adicionar ao carrinho!<a/>
+                        <a keys="`+val.id+`" href="">Adicionar ao carrinho!<a/>
                     `;
                 })
             }
+
             inicializarloja();
 
+            atualizarCarrinho = () => {
+
+            }
+
+            var links = document.getElementsByTagName('a');
+
+            for(var i = 0; i < links.length; i++){
+                links[i].addEventListener("click",function(){
+                    let key = this.getAttribute('key');
+                    items[key].quantidade++;
+                    atualizarCarrinho();
+                    return false;
+                })
+            }
 
         </script>
     </body>
