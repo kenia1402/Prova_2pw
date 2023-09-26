@@ -1,13 +1,23 @@
 <html>
     <head>
         <title>#brechodakenia</title>
-        <meta charset="utf:8"/>
+        <meta charset="utf-8"/> 
+        <link href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap" rel="stylesheet">
         <style>
+            *{
+                font-family: 'Oswald', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
             #produtos{
                 max-width: 800px;
                 margin: 0 auto;
                 padding: 0 2%;
                 display: flex;
+                flex-wrap: wrap;
             }
             #carrinho{
                 max-width: 800px;
@@ -16,22 +26,59 @@
                 display: block;
             }
             .produto-single{
-                width: 33.3%;
-                padding: 0 20px;
+                width: 32%;
+                margin-right: 1%;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .produto-single img{
+                max-width: 100%;
+            }
+            .produto-single p{
+                text-align: center;
+                font-size: 16px;
+                padding: 10px;
+            }
+            .produto-single a{
+                text-decoration: none;
+                color: blue;
+                background-color: aquamarine;
+                text-align: center;
+                display: block;
+                padding: 4px 0;
+                font-size: 18px;
+            }
+            h2{
+                background-color: rgb(80, 147, 235);
+                padding: 10px 0;
+                text-align: center;
+                color: white;
+            }
+            .info-single-checkout{
+                border-bottom: 2px solid dotted;
+                padding: 10px 0;
+            }
+
+            @media screen and (max-width: 768px) {
+                .produto-single{
+                    width: 100%;
+                    margin-right: 0;
+                }
             }
         </style>
     </head>
 
     <body>
 
-        <h2>Vitrine:</h2>
+        <h2>Vitrine</h2>
 
         <div id="produtos">
 
         </div>
 
         
-        <h2>Carrinho:</h2>
+        <h2>Carrinho</h2>
 
         <div id="carrinho">
 
@@ -40,22 +87,22 @@
         <script>
             const items = [
                 {
-                    id:0,
+                    id: 0,
                     nome: "blusa",
                     img: "imagem.avif",
-                    quanidade: 0,
+                    quantidade: 0, 
                 },
                 {
-                    id:1,
+                    id: 1,
                     nome: "calça",
                     img: "imagem.avif",
-                    quanidade: 0,
+                    quantidade: 0, 
                 },
                 {
-                    id:2,
+                    id: 2,
                     nome: "cardigan",
                     img: "imagem.avif",
-                    quanidade: 0,
+                    quantidade: 0, 
                 },
             ]
 
@@ -67,8 +114,7 @@
                     <div class="produto-single">
                         <img src="`+val.img+`"/>
                         <p>`+val.nome+`</p>
-                        <a keys="`+val.id+`" href="#">Adicionar ao carrinho!<a/>
-                    `;
+                        <a key="`+val.id+`" href="#">Adicionar ao carrinho!</a>`; 
                 })
             }
 
@@ -78,11 +124,13 @@
                 var containerCarrinho = document.getElementById('carrinho');
                 containerCarrinho.innerHTML =""
                 items.map((val)=>{
-                    if(val.quanidade > 0){
+                    if(val.quantidade > 0){
                     containerCarrinho.innerHTML+= `
-
-                   <p>`+val.nome+` | quantidade: `+val.quantidade+`</p>
-                   <hr>
+                    <div class:"info-single-checkut">
+                   <p style="float:left;">Produtos: `+val.nome+`</p>
+                   <p style="float:right;">Quantidade: `+val.quantidade+`</p>
+                   <div style="clear:both"></div>
+                   </div>
                     `;
                      }
                 })
