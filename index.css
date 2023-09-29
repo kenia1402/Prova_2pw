@@ -52,11 +52,54 @@ h2{
 .info-single-checkout{
     border-bottom: 2px dotted;
     padding: 10px 0;
-    display: block;
 }
-.info-single-checkout p {
+.info-single-checkout p:first-child {
+    font-weight: bold;
+}
+.info-single-checkout p:last-child {
+    font-style: italic;
+    color: #888;
+}
+footer{
+    width: 100%;
+    min-height: 250px;
+    background: rgb(228, 154, 42);
+    display: flex;
+}
+footer .boxs{
+    width: 320px;
+    min-height: 150px;
+    padding: 20px;
+}
+footer .boxs:nth-child(4){
+    width: 400px;
+}
+.boxs h2{
+    color: #ffff;
+    margin-bottom: 20px;
+}
+.boxs ul li{
+    margin: 10px 0px;
+    list-style: none;
+}
+.boxs ul li a{
+    color: #ffff;
+    text-decoration: none;
+}
+.boxs ul li a:hover{
+    color: #ffff;
+}
+.boxs p{
+    color: #ffff;
+    text-align: justify;
+}
 
+@media(max-width: 950px)
+{
+    footer {
+        flex-direction: column;
 }
+
 
 @media screen and (max-width: 768px) {
     .produto-single{

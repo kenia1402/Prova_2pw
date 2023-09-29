@@ -53,6 +53,7 @@
                     <div class="produto-single">
                         <img src="`+val.img+`"/>
                         <p>`+val.nome+`</p>
+                        <p>Valor: ${val.quantidade * val.valor}</p>
                         <a key="`+val.id+`" href="#">Adicionar ao carrinho!</a>`; 
                 })
             }
@@ -65,12 +66,11 @@
                 items.map((val)=>{
                     if(val.quantidade > 0){
                     containerCarrinho.innerHTML+= `
-                    <div class:"info-single-checkout">a
-                   <p style="float:left;">Produtos: `+val.nome+`</p>
-                   <p style="float:right;">Quantidade: `+val.quantidade+`</p>
-                   <p style="float:centar;">Valor: ${val.quantidade * val.valor}</p>
-                   <div style="clear:both"></div>
-                   </div>
+                    <div class="info-single-checkout">
+                    <p style="float:left;">Produto: ${val.nome}</p>
+                    <p style="float:right;">Quantidade: ${val.quantidade}</p>
+                    <div style="clear:both"></div>
+                </div>
                     `;
                      }
                 })
@@ -86,7 +86,38 @@
                     return false;
                 })
             }
-
         </script>
+        <footer>
+            <div class="boxs">
+                <h2>Inicio</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Dowload</a></li>
+                </ul>
+            </div>
+            <div class="boxs">
+                <h2>Informações</h2>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
+            </div>
+            <div class="boxs">
+                <h2>Suporte</h2>
+                <ul>
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="#">Telefone</a></li>
+                    <li><a href="#">Chat</a></li>
+                </ul>
+            </div>
+            <div class="boxs">
+                <h2>Sobre nós</h2>
+                    <p>
+                        oi
+                    </p>
+            </div>
+        </footer>
     </body>
 </html>
