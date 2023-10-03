@@ -6,6 +6,94 @@
     padding: 0;
     box-sizing: border-box;
 }
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #ffff;
+}
+.container nav{
+    position: relative;
+    width: 100%;
+    height: 90px;
+    display: flex;
+}
+.container nav ul{
+    position: absolute;
+    right: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.container nav ul li{
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+.container nav ul li a{
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+.container nav ul li a::before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    background: rgb(242, 223, 51);
+    top: 25px;
+}
+.container nav ul li:hover a:before{
+    width: 100%;
+}
+.container nav .logo{
+    width: 90px;
+    height: 100%;
+    margin-left: 80px;
+    display: flex;
+    padding: 10px;
+}
+.sub-container{
+    width: 100%;
+    height: calc(100% - 90px);
+}
+.sub-container .janela.dois{
+    position: relative;
+    overflow: hidden;
+}
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+}
+.carousel img {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* Largura máxima desejada */
+    max-height: 500px;
+    display: block; /* Para aplicar margin auto */
+    margin: 0 auto;
+    
+}
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.carousel-controls button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0 10px;
+}
+ 
 #produtos{
     max-width: 800px;
     margin: 0 auto;
@@ -60,6 +148,7 @@ h2{
     font-style: italic;
     color: #888;
 }
+
 footer{
     width: 100%;
     min-height: 250px;
@@ -100,10 +189,11 @@ footer .boxs:nth-child(4){
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgb(228, 154, 42);
+    background: rgb(226, 164, 71);
     padding: 0px 20px;
 } 
 .content h2{
+    background: rgb(226, 164, 71);
     color: #ccc;
 }
 .content .sociais{
@@ -114,24 +204,27 @@ footer .boxs:nth-child(4){
     height: 40px;
     text-align: center;
     line-height: 40px;
-    background: #ccc;
+    background: rgb(226, 164, 71);
     margin: 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: background .3s linear;
 }
+.sociais .social ion-icon{
+    font-size: 40px;
+    align-items: center;
+}
 .sociais social a{
-    color: #ccc;
+    color: 53737;
     font-size: 1.5em;
     transition: color .3s linear;
 }
 .sociais .social:hover{
-    background: #888;
+    background: rgb(226, 164, 71);
 }
 .sociais .social:hover a{
-    color: #888;
+    color: yellow;
 }
-
 
 
 @media(max-width: 950px)
@@ -139,7 +232,6 @@ footer .boxs:nth-child(4){
     footer {
         flex-direction: column;
 }
-
 
 @media screen and (max-width: 768px) {
     .produto-single{

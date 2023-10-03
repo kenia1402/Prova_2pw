@@ -1,12 +1,79 @@
 <html>
     <head>
         <title>#brechodakenia</title>
-        <meta charset="utf-8"/> 
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     </head>
 
-    <body>
+    <body>  
+        <div class="container">
+
+            <nav>
+                <div class="logo">
+                    <img src="img/logo.jpg" alt="">
+                </div>
+    
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">What`s New</a></li>
+                    <li><a href="#">Contact use</a></li>
+                </ul>
+            </nav>
+    
+            <div class="sub-container">
+                <div class="janela um"></div>
+                <div class="janela dois">
+                    <div class="circulo"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="img/blusa.webp" alt="Imagem 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/calca.webp" alt="Imagem 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/conjunto.webp" alt="Imagem 3">
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button id="prevSlide">&#9664;</button>
+            <button id="nextSlide">&#9654;</button>
+        </div>
+        <script>
+            const carousel = document.querySelector('.carousel');
+            const prevButton = document.getElementById('prevSlide');
+            const nextButton = document.getElementById('nextSlide');
+            const itens = document.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+        
+            function goToSlide(index) {
+                carousel.style.transform = `translateX(-${index * 100}%)`;
+                currentIndex = index;
+            }
+
+            prevButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    goToSlide(currentIndex - 1);
+                }
+            });
+        
+            nextButton.addEventListener('click', () => {
+                if (currentIndex < itens.length - 1) {
+                    goToSlide(currentIndex + 1);
+                }
+            });
+        </script>
+        
+     
 
         <h2>Vitrine</h2>
 
@@ -26,21 +93,21 @@
                 {
                     id: 0,
                     nome: "Blusa",
-                    img: "blusa.webp",
+                    img: "img/blusa.webp",
                     quantidade: 0, 
                     valor: 0,
                 },
                 {
                     id: 1,
                     nome: "Calça",
-                    img: "calca.webp",
+                    img: "img/calca.webp",
                     quantidade: 0, 
                     valor: 0,
                 },
                 {
                     id: 2,
                     nome: "Conjunto",
-                    img: "conjunto.webp",
+                    img: "img/conjunto.webp",
                     quantidade: 0, 
                     valor:0,
                 },
@@ -122,16 +189,20 @@
         </footer>
 
         <div class="content">
-            <h2>Logo</h2>
+            <h2>Fale conosco!</h2>
             <div class="sociais">
                 <div class="social">
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></i></a>
                 </div>
                 <div class="social">
-                    <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
                 </div>
             </div>
         </div>
+
+        <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" ></script> 
+        <script  nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js" > </script>
+
 
     </body>
 </html>
